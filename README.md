@@ -34,7 +34,7 @@ assignment 1 of "Computer Vision"
     - se: a numpy "array" type, stands for structure element(se)
     - center(optional): a turple like (a,b) or a list like [a,b] stands for the coordinate of the center of se.
 - output:
-    - ret_img: anumpy "array" type, which is binary dilated from origin image.
+    - ret_img: a numpy "array" type, which is binary dilated from origin image.
 - implement:
     1. **calculate ret_img size**. The size will be *larger* than the origin image because of the dilation, w(ret_img)=w(ori_img)+w(se)-1,so does the height.
     2. **build ret_img**. For each pixel with the value of 1 in ori_img, we overlap the center of se on it and draw the pixel of ret_img on each 1 pixel of the overlapped se.
@@ -45,7 +45,7 @@ assignment 1 of "Computer Vision"
     - se: a numpy "array" type, stands for structure element(se)
     - center(optional): a turple like (a,b) or a list like [a,b] stands for the coordinate of the center of se.
 - output:
-    - ret_img: anumpy "array" type, which is binary erosed from origin image.
+    - ret_img: a numpy "array" type, which is binary erosed from origin image.
 - implement:
     1. **calculate ret_img size**. The size will be *smaller* than the origin image because of the erosion, w(ret_img)=w(ori_img)-w(se)+1,so does the height.
     2. **build ret_img**. We overlap the se on each appropriate place on ori_img, and check if each 1 pixel of se match a 1 pixel of ori_img. If true, draw the pixel of ret_img on corresponding place of se center.

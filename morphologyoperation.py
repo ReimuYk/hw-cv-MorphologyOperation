@@ -89,7 +89,7 @@ def bi_dilation(ori_img,se,center=None):
                 for se_h in range(se_height):
                     for se_w in range(se_width):
                         if se[se_h][se_w]!=0:
-                            ret_img[h+se_h][w+se_w]=1
+                            ret_img[h+se_h][w+se_w]=255
     return array(ret_img)
 
 
@@ -119,14 +119,15 @@ def bi_erosion(ori_img,se,center=None):
                     if se[se_h][se_w]!=0 and ori_img[th_h][th_w]==0:
                         flag=False
             if flag:
-                ret_img[h][w]=1
+                ret_img[h][w]=255
     return array(ret_img)
             
 
 ori_img=array([[0,1,0,0],[1,1,1,1],[0,1,1,0],[0,0,0,1]])
 se=array([[0,1],[1,1]])
 ##ret=bi_dilation(ori_img,se)
-ret1=bi_erosion(ori_img,se)
+
+ret1=bi_erosion(ori_img,se)
 ret=bi_dilation(ret1,se)
 
 
